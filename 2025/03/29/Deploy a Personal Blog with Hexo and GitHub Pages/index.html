@@ -1,194 +1,281 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 7.3.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-<link rel="stylesheet" href="/css/main.css">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
 
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
-  </script>
-
-  <meta name="description" content="This guide walks you through every step to set up, write, preview, and deploy a personal blog using Hexo (a fast static site generator), Node.js, Git, and GitHub Pages.  ✨ Overview of Tools   Tool Pur">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="This guide walks you through every step to set up, write, preview, and deploy a personal blog using Hexo (a fast static site generator), Node.js, Git, and GitHub Pages.  ✨ Overview of Tools   Tool Pur">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Deploy a Hexo Personal Blog">
 <meta property="og:url" content="http://example.com/2025/03/29/Deploy%20a%20Personal%20Blog%20with%20Hexo%20and%20GitHub%20Pages/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Avis Susurrus">
 <meta property="og:description" content="This guide walks you through every step to set up, write, preview, and deploy a personal blog using Hexo (a fast static site generator), Node.js, Git, and GitHub Pages.  ✨ Overview of Tools   Tool Pur">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-03-30T02:31:15.317Z">
 <meta property="article:modified_time" content="2025-03-30T04:39:25.876Z">
 <meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>Deploy a Hexo Personal Blog - Avis Susurrus</title>
 
-<link rel="canonical" href="http://example.com/2025/03/29/Deploy%20a%20Personal%20Blog%20with%20Hexo%20and%20GitHub%20Pages/">
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'en'
-  };
-</script>
 
-  <title>Deploy a Hexo Personal Blog | Hexo</title>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
 
 
 
 
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
 
 
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
 
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
+<body>
+  
 
-</head>
+  <header>
+    
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Hexo</h1>
-      <span class="logo-line-after"><i></i></span>
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Avis Susurrus</strong>
     </a>
-  </div>
 
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
     </div>
   </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
-
-  </li>
-  </ul>
 </nav>
 
+  
 
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Deploy a Hexo Personal Blog"></span>
+          
+        </div>
 
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-03-29 21:31" pubdate>
+          2025年3月29日 晚上
+        </time>
+      </span>
+    
+  </div>
 
-</div>
-    </header>
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          531 字
+        
+      </span>
+    
 
     
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          5 分钟
+        
+      </span>
+    
+
+    
+    
   </div>
 
 
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content post posts-expand">
-            
-
-    
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/03/29/Deploy%20a%20Personal%20Blog%20with%20Hexo%20and%20GitHub%20Pages/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          Deploy a Hexo Personal Blog
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2025-03-29 21:31:15 / Modified: 23:39:25" itemprop="dateCreated datePublished" datetime="2025-03-29T21:31:15-05:00">2025-03-29</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+        
+      </div>
 
       
-        <p>This guide walks you through every step to set up, write, preview, and deploy a personal blog using <strong>Hexo</strong> (a fast static site generator), <strong>Node.js</strong>, <strong>Git</strong>, and <strong>GitHub Pages</strong>.</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Deploy a Hexo Personal Blog</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>This guide walks you through every step to set up, write, preview, and deploy a personal blog using <strong>Hexo</strong> (a fast static site generator), <strong>Node.js</strong>, <strong>Git</strong>, and <strong>GitHub Pages</strong>.</p>
 <hr>
 <h2 id="✨-Overview-of-Tools"><a href="#✨-Overview-of-Tools" class="headerlink" title="✨ Overview of Tools"></a>✨ Overview of Tools</h2><table>
 <thead>
@@ -262,7 +349,7 @@
 <li><p>Run:</p>
 </li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli   <span class="comment"># -g installs it globally so you can use `hexo` command anywhere</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install -g hexo-cli   <span class="hljs-comment"># -g installs it globally so you can use `hexo` command anywhere</span><br></code></pre></td></tr></table></figure>
 
 <h3 id="B-Create-a-Blog-Project-Folder"><a href="#B-Create-a-Blog-Project-Folder" class="headerlink" title="B. Create a Blog Project Folder"></a>B. Create a Blog Project Folder</h3><ol>
 <li><p>Create or open a folder on your local machine where you want to build your blog (e.g., <code>Documents/BlogProjects</code>)</p>
@@ -272,17 +359,17 @@
 <li><p>Run the following commands:</p>
 </li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init my-blog         <span class="comment"># Initializes a new Hexo project in a folder named &#x27;my-blog&#x27;</span></span><br><span class="line"><span class="built_in">cd</span> my-blog                <span class="comment"># Navigates into the new blog folder</span></span><br><span class="line">npm install               <span class="comment"># Installs the required dependencies specified in the package.json</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo init my-blog         <span class="hljs-comment"># Initializes a new Hexo project in a folder named &#x27;my-blog&#x27;</span><br><span class="hljs-built_in">cd</span> my-blog                <span class="hljs-comment"># Navigates into the new blog folder</span><br>npm install               <span class="hljs-comment"># Installs the required dependencies specified in the package.json</span><br></code></pre></td></tr></table></figure>
 
 <h3 id="C-Test-Your-Blog-Locally"><a href="#C-Test-Your-Blog-Locally" class="headerlink" title="C. Test Your Blog Locally"></a>C. Test Your Blog Locally</h3><ul>
 <li>To preview your blog before publishing:</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server               <span class="comment"># Starts a local development server</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo server               <span class="hljs-comment"># Starts a local development server</span><br></code></pre></td></tr></table></figure>
 
 <ul>
 <li>Then open your browser and go to:</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:4000</span><br></pre></td></tr></table></figure>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">http:</span><span class="hljs-comment">//localhost:4000</span><br></code></pre></td></tr></table></figure>
 
 <hr>
 <h2 id="✅-Step-3-Create-and-Connect-a-GitHub-Repository"><a href="#✅-Step-3-Create-and-Connect-a-GitHub-Repository" class="headerlink" title="✅ Step 3: Create and Connect a GitHub Repository"></a>✅ Step 3: Create and Connect a GitHub Repository</h2><h3 id="A-Set-up-GitHub"><a href="#A-Set-up-GitHub" class="headerlink" title="A. Set up GitHub"></a>A. Set up GitHub</h3><ul>
@@ -302,7 +389,7 @@
 <p>Git is necessary to connect your local blog folder with the GitHub repository so you can push your code online.</p>
 </blockquote>
 <p>In Git Bash or terminal:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;Your Name&quot;</span>          <span class="comment"># Sets your Git username</span></span><br><span class="line">git config --global user.email <span class="string">&quot;you@example.com&quot;</span>   <span class="comment"># Sets your Git email</span></span><br><span class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">&quot;you@example.com&quot;</span>      <span class="comment"># Generates SSH key to authenticate with GitHub</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">git config --global user.name <span class="hljs-string">&quot;Your Name&quot;</span>          <span class="hljs-comment"># Sets your Git username</span><br>git config --global user.email <span class="hljs-string">&quot;you@example.com&quot;</span>   <span class="hljs-comment"># Sets your Git email</span><br>ssh-keygen -t rsa -b 4096 -C <span class="hljs-string">&quot;you@example.com&quot;</span>      <span class="hljs-comment"># Generates SSH key to authenticate with GitHub</span><br></code></pre></td></tr></table></figure>
 
 <p>Then:</p>
 <ul>
@@ -312,15 +399,15 @@
 </li>
 </ul>
 <h3 id="C-Connect-Your-Local-Hexo-Folder-to-GitHub"><a href="#C-Connect-Your-Local-Hexo-Folder-to-GitHub" class="headerlink" title="C. Connect Your Local Hexo Folder to GitHub"></a>C. Connect Your Local Hexo Folder to GitHub</h3><p>In your blog project folder:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> my-blog</span><br><span class="line">npm install hexo-deployer-git --save      <span class="comment"># Installs the deployment plugin</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> my-blog<br>npm install hexo-deployer-git --save      <span class="hljs-comment"># Installs the deployment plugin</span><br></code></pre></td></tr></table></figure>
 
 <p>Edit the <code>_config.yml</code> file in your Hexo root directory:</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:yourusername/yourusername.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repo:</span> <span class="hljs-string">git@github.com:yourusername/yourusername.github.io.git</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">main</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="D-Deploy-for-the-First-Time"><a href="#D-Deploy-for-the-First-Time" class="headerlink" title="D. Deploy for the First Time"></a>D. Deploy for the First Time</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean         <span class="comment"># Cleans cache and old files</span></span><br><span class="line">hexo generate      <span class="comment"># Converts markdown into HTML static files</span></span><br><span class="line">hexo deploy        <span class="comment"># Pushes your generated files to GitHub</span></span><br></pre></td></tr></table></figure>
+<h3 id="D-Deploy-for-the-First-Time"><a href="#D-Deploy-for-the-First-Time" class="headerlink" title="D. Deploy for the First Time"></a>D. Deploy for the First Time</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo clean         <span class="hljs-comment"># Cleans cache and old files</span><br>hexo generate      <span class="hljs-comment"># Converts markdown into HTML static files</span><br>hexo deploy        <span class="hljs-comment"># Pushes your generated files to GitHub</span><br></code></pre></td></tr></table></figure>
 
 <p>Then visit:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://yourusername.github.io</span><br></pre></td></tr></table></figure>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">https:</span><span class="hljs-comment">//yourusername.github.io</span><br></code></pre></td></tr></table></figure>
 
 <h2 id="✅-Step-3-5-Hosting-a-Second-Blog-Optional"><a href="#✅-Step-3-5-Hosting-a-Second-Blog-Optional" class="headerlink" title="✅ Step 3.5: Hosting a Second Blog (Optional)"></a>✅ Step 3.5: Hosting a Second Blog (Optional)</h2><p>If you want to host multiple blogs on the same GitHub account:</p>
 <ol>
@@ -329,12 +416,12 @@
 <li><p>In your second Hexo project’s <code>_config.yml</code>, set:</p>
 </li>
 </ol>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:yourusername/second-blog.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">gh-pages</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repo:</span> <span class="hljs-string">git@github.com:yourusername/second-blog.git</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">gh-pages</span><br></code></pre></td></tr></table></figure>
 
 <ol start="3">
 <li>After deploying, your second blog will be accessible at:</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://yourusername.github.io/second-blog/</span><br></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">https:<span class="hljs-regexp">//y</span>ourusername.github.io<span class="hljs-regexp">/second-blog/</span><br></code></pre></td></tr></table></figure>
 
 <blockquote>
 <p>✅ Great for testing, personal sub-blogs, or project documentation.</p>
@@ -382,10 +469,10 @@
 </li>
 </ul>
 <h3 id="D-Add-CNAME-to-Your-Hexo-Blog"><a href="#D-Add-CNAME-to-Your-Hexo-Blog" class="headerlink" title="D. Add CNAME to Your Hexo Blog"></a>D. Add CNAME to Your Hexo Blog</h3><p>Create a file named <code>CNAME</code> (no extension) in the <code>source/</code> folder of your Hexo project:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yourdomain.com</span><br></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs vim">yourdomain.<span class="hljs-keyword">com</span><br></code></pre></td></tr></table></figure>
 
 <p>Then:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy<br></code></pre></td></tr></table></figure>
 
 <p>Now your blog will be available at <code>https://yourdomain.com</code></p>
 <blockquote>
@@ -395,24 +482,24 @@
 <h2 id="✅-Step-5-Adding-Editing-and-Deleting-Posts"><a href="#✅-Step-5-Adding-Editing-and-Deleting-Posts" class="headerlink" title="✅ Step 5: Adding, Editing, and Deleting Posts"></a>✅ Step 5: Adding, Editing, and Deleting Posts</h2><blockquote>
 <p>Run these commands inside your Hexo blog folder using a terminal (e.g., Git Bash or VS Code Terminal).</p>
 </blockquote>
-<h3 id="A-Add-a-New-Post"><a href="#A-Add-a-New-Post" class="headerlink" title="A. Add a New Post"></a>A. Add a New Post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">&quot;My First Post&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="A-Add-a-New-Post"><a href="#A-Add-a-New-Post" class="headerlink" title="A. Add a New Post"></a>A. Add a New Post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo new <span class="hljs-string">&quot;My First Post&quot;</span><br></code></pre></td></tr></table></figure>
 
 <h3 id="B-Edit-a-Post"><a href="#B-Edit-a-Post" class="headerlink" title="B. Edit a Post"></a>B. Edit a Post</h3><p>Use a Markdown editor (e.g., VS Code, Typora) to open <code>source/_posts/your-post.md</code></p>
 <h3 id="C-Delete-a-Post"><a href="#C-Delete-a-Post" class="headerlink" title="C. Delete a Post"></a>C. Delete a Post</h3><p>Delete the corresponding <code>.md</code> file from <code>source/_posts/</code></p>
-<h3 id="D-Preview-Changes-Locally"><a href="#D-Preview-Changes-Locally" class="headerlink" title="D. Preview Changes Locally"></a>D. Preview Changes Locally</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo generate &amp;&amp; hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="D-Preview-Changes-Locally"><a href="#D-Preview-Changes-Locally" class="headerlink" title="D. Preview Changes Locally"></a>D. Preview Changes Locally</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo clean &amp;&amp; hexo generate &amp;&amp; hexo server<br></code></pre></td></tr></table></figure>
 
 <p>Then open: <code>http://localhost:4000</code></p>
-<h3 id="E-Deploy-Changes"><a href="#E-Deploy-Changes" class="headerlink" title="E. Deploy Changes"></a>E. Deploy Changes</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<h3 id="E-Deploy-Changes"><a href="#E-Deploy-Changes" class="headerlink" title="E. Deploy Changes"></a>E. Deploy Changes</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo deploy<br></code></pre></td></tr></table></figure>
 
 <hr>
 <h2 id="✅-Step-6-Change-Blog-Theme"><a href="#✅-Step-6-Change-Blog-Theme" class="headerlink" title="✅ Step 6: Change Blog Theme"></a>✅ Step 6: Change Blog Theme</h2><blockquote>
 <p>Run the following commands from the root of your Hexo project.</p>
 </blockquote>
-<h3 id="A-Install-a-Theme-Example-NexT"><a href="#A-Install-a-Theme-Example-NexT" class="headerlink" title="A. Install a Theme (Example: NexT)"></a>A. Install a Theme (Example: NexT)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next next</span><br></pre></td></tr></table></figure>
+<h3 id="A-Install-a-Theme-Example-NexT"><a href="#A-Install-a-Theme-Example-NexT" class="headerlink" title="A. Install a Theme (Example: NexT)"></a>A. Install a Theme (Example: NexT)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> themes<br>git <span class="hljs-built_in">clone</span> https://github.com/theme-next/hexo-theme-next next<br></code></pre></td></tr></table></figure>
 
-<h3 id="B-Set-Theme-in-config-yml"><a href="#B-Set-Theme-in-config-yml" class="headerlink" title="B. Set Theme in _config.yml"></a>B. Set Theme in <code>_config.yml</code></h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure>
+<h3 id="B-Set-Theme-in-config-yml"><a href="#B-Set-Theme-in-config-yml" class="headerlink" title="B. Set Theme in _config.yml"></a>B. Set Theme in <code>_config.yml</code></h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">theme:</span> <span class="hljs-string">next</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="C-Rebuild-and-Deploy"><a href="#C-Rebuild-and-Deploy" class="headerlink" title="C. Rebuild and Deploy"></a>C. Rebuild and Deploy</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy</span><br></pre></td></tr></table></figure>
+<h3 id="C-Rebuild-and-Deploy"><a href="#C-Rebuild-and-Deploy" class="headerlink" title="C. Rebuild and Deploy"></a>C. Rebuild and Deploy</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy<br></code></pre></td></tr></table></figure>
 
 <hr>
 <h2 id="✅-Step-7-Add-Comment-System-Valine-Waline"><a href="#✅-Step-7-Add-Comment-System-Valine-Waline" class="headerlink" title="✅ Step 7: Add Comment System (Valine &#x2F; Waline)"></a>✅ Step 7: Add Comment System (Valine &#x2F; Waline)</h2><blockquote>
@@ -425,9 +512,9 @@
 </li>
 </ul>
 <h3 id="B-Edit-Theme-Config"><a href="#B-Edit-Theme-Config" class="headerlink" title="B. Edit Theme Config"></a>B. Edit Theme Config</h3><p>Edit <code>themes/next/_config.yml</code>:</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">valine:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">appId:</span> <span class="string">&lt;your-app-id&gt;</span></span><br><span class="line">  <span class="attr">appKey:</span> <span class="string">&lt;your-app-key&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">valine:</span><br>  <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">appId:</span> <span class="hljs-string">&lt;your-app-id&gt;</span><br>  <span class="hljs-attr">appKey:</span> <span class="hljs-string">&lt;your-app-key&gt;</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="C-Rebuild-and-Deploy-1"><a href="#C-Rebuild-and-Deploy-1" class="headerlink" title="C. Rebuild and Deploy"></a>C. Rebuild and Deploy</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy</span><br></pre></td></tr></table></figure>
+<h3 id="C-Rebuild-and-Deploy-1"><a href="#C-Rebuild-and-Deploy-1" class="headerlink" title="C. Rebuild and Deploy"></a>C. Rebuild and Deploy</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy<br></code></pre></td></tr></table></figure>
 
 <hr>
 <h2 id="✅-Done"><a href="#✅-Done" class="headerlink" title="✅ Done!"></a>✅ Done!</h2><p>You now have a complete Hexo blog that supports writing, theming, commenting, custom domains, automation, and mobile writing.</p>
@@ -477,7 +564,7 @@
 <hr>
 <h2 id="🚀Advanced-Feature-WIP"><a href="#🚀Advanced-Feature-WIP" class="headerlink" title="🚀Advanced Feature (WIP)"></a>🚀Advanced Feature (WIP)</h2><h3 id="Auto-Deployment-with-GitHub-Actions"><a href="#Auto-Deployment-with-GitHub-Actions" class="headerlink" title="Auto Deployment with GitHub Actions"></a>Auto Deployment with GitHub Actions</h3><p>Sample GitHub Actions Workflow</p>
 <p>Create <code>.github/workflows/deploy.yml</code>:</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Deploy</span> <span class="string">Hexo</span> <span class="string">Blog</span></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">main</span></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">build:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">actions/checkout@v3</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">actions/setup-node@v3</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">node-version:</span> <span class="string">&#x27;18&#x27;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">npm</span> <span class="string">install</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">npx</span> <span class="string">hexo</span> <span class="string">generate</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">peaceiris/actions-gh-pages@v3</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">github_token:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.GITHUB_TOKEN</span> <span class="string">&#125;&#125;</span></span><br><span class="line">          <span class="attr">publish_dir:</span> <span class="string">./public</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">name:</span> <span class="hljs-string">Deploy</span> <span class="hljs-string">Hexo</span> <span class="hljs-string">Blog</span><br><span class="hljs-attr">on:</span><br>  <span class="hljs-attr">push:</span><br>    <span class="hljs-attr">branches:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">main</span><br><span class="hljs-attr">jobs:</span><br>  <span class="hljs-attr">build:</span><br>    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span><br>    <span class="hljs-attr">steps:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v3</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/setup-node@v3</span><br>        <span class="hljs-attr">with:</span><br>          <span class="hljs-attr">node-version:</span> <span class="hljs-string">&#x27;18&#x27;</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">run:</span> <span class="hljs-string">npm</span> <span class="hljs-string">install</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">run:</span> <span class="hljs-string">npx</span> <span class="hljs-string">hexo</span> <span class="hljs-string">generate</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">peaceiris/actions-gh-pages@v3</span><br>        <span class="hljs-attr">with:</span><br>          <span class="hljs-attr">github_token:</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">secrets.GITHUB_TOKEN</span> <span class="hljs-string">&#125;&#125;</span><br>          <span class="hljs-attr">publish_dir:</span> <span class="hljs-string">./public</span><br></code></pre></td></tr></table></figure>
 
 <hr>
 <h3 id="Local-Mobile-Writing-Workflow"><a href="#Local-Mobile-Writing-Workflow" class="headerlink" title="Local + Mobile Writing Workflow"></a>Local + Mobile Writing Workflow</h3><h5 id="A-On-Your-Computer"><a href="#A-On-Your-Computer" class="headerlink" title="A. On Your Computer"></a>A. On Your Computer</h5><p>From your Hexo blog folder:</p>
@@ -487,7 +574,7 @@
 <li><p>Use Git to version and push changes:</p>
 </li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;Add post&quot;</span></span><br><span class="line">git push origin main</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">git add .<br>git commit -m <span class="hljs-string">&quot;Add post&quot;</span><br>git push origin main<br></code></pre></td></tr></table></figure>
 
 <h5 id="B-On-Mobile"><a href="#B-On-Mobile" class="headerlink" title="B. On Mobile"></a>B. On Mobile</h5><ul>
 <li><p>You can:</p>
@@ -503,197 +590,344 @@
 </ul>
 <hr>
 <h4 id="One-click-Init-Deploy-Script-Bash"><a href="#One-click-Init-Deploy-Script-Bash" class="headerlink" title="One-click Init + Deploy Script (Bash)"></a>One-click Init + Deploy Script (Bash)</h4><p>Save this as <code>hexo-init.sh</code> and run it in Git Bash:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">read</span> -p <span class="string">&quot;Enter blog folder name: &quot;</span> folder</span><br><span class="line">hexo init <span class="string">&quot;<span class="variable">$folder</span>&quot;</span></span><br><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="variable">$folder</span>&quot;</span></span><br><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line"><span class="built_in">cat</span> &lt;&lt;<span class="string">EOF &gt;&gt; _config.yml</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">deploy:</span></span><br><span class="line"><span class="string">  type: git</span></span><br><span class="line"><span class="string">  repo: git@github.com:yourusername/yourusername.github.io.git</span></span><br><span class="line"><span class="string">  branch: main</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line">hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span><br><span class="hljs-built_in">read</span> -p <span class="hljs-string">&quot;Enter blog folder name: &quot;</span> folder<br>hexo init <span class="hljs-string">&quot;<span class="hljs-variable">$folder</span>&quot;</span><br><span class="hljs-built_in">cd</span> <span class="hljs-string">&quot;<span class="hljs-variable">$folder</span>&quot;</span><br>npm install<br>npm install hexo-deployer-git --save<br><span class="hljs-built_in">cat</span> &lt;&lt;<span class="hljs-string">EOF &gt;&gt; _config.yml</span><br><span class="hljs-string"></span><br><span class="hljs-string">deploy:</span><br><span class="hljs-string">  type: git</span><br><span class="hljs-string">  repo: git@github.com:yourusername/yourusername.github.io.git</span><br><span class="hljs-string">  branch: main</span><br><span class="hljs-string">EOF</span><br>hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy<br></code></pre></td></tr></table></figure>
 
 <blockquote>
 <p>💡 Replace <code>yourusername</code> with your GitHub username.</p>
 </blockquote>
 <hr>
 
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Deploy a Hexo Personal Blog</div>
+      <div>http://example.com/2025/03/29/Deploy a Personal Blog with Hexo and GitHub Pages/</div>
     </div>
-
-    
-    
-    
-
-      <footer class="post-footer">
-
-        
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2025/03/28/hello-world/" rel="prev" title="Hello World">
-      <i class="fa fa-chevron-left"></i> Hello World
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2025/03/30/VS-Code-Integrated-Workflow-for-Managing-Hexo-Blog/" rel="next" title="VS Code Integrated Workflow for Managing Hexo Blog">
-      VS Code Integrated Workflow for Managing Hexo Blog <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
-
-
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年3月29日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
           </div>
-          
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
 
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2015/04/08/t/" title="t">
+                        <span class="hidden-mobile">t</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
       }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
     }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
     });
-  }
+  });
 </script>
 
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
 
-  <aside class="sidebar">
-    <div class="sidebar-inner">
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
 
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
+  <script>Fluid.plugins.codeWidget();</script>
 
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%9C%A8-Overview-of-Tools"><span class="nav-number">1.</span> <span class="nav-text">✨ Overview of Tools</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%9C%85-Step-1-Install-Prerequisites"><span class="nav-number">2.</span> <span class="nav-text">✅ Step 1: Install Prerequisites</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-Install-Node-js-and-npm"><span class="nav-number">2.1.</span> <span class="nav-text">A. Install Node.js and npm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-Install-Git"><span class="nav-number">2.2.</span> <span class="nav-text">B. Install Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-Optional-but-recommended-Install-a-Markdown-Editor"><span class="nav-number">2.3.</span> <span class="nav-text">C. (Optional but recommended) Install a Markdown Editor</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%9C%85-Step-2-Set-Up-a-Hexo-Blog-Locally"><span class="nav-number">3.</span> <span class="nav-text">✅ Step 2: Set Up a Hexo Blog Locally</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-Install-Hexo-CLI-Command-Line-Interface"><span class="nav-number">3.1.</span> <span class="nav-text">A. Install Hexo CLI (Command Line Interface)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-Create-a-Blog-Project-Folder"><span class="nav-number">3.2.</span> <span class="nav-text">B. Create a Blog Project Folder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-Test-Your-Blog-Locally"><span class="nav-number">3.3.</span> <span class="nav-text">C. Test Your Blog Locally</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%9C%85-Step-3-Create-and-Connect-a-GitHub-Repository"><span class="nav-number">4.</span> <span class="nav-text">✅ Step 3: Create and Connect a GitHub Repository</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-Set-up-GitHub"><span class="nav-number">4.1.</span> <span class="nav-text">A. Set up GitHub</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-Set-up-Git-Locally"><span class="nav-number">4.2.</span> <span class="nav-text">B. Set up Git Locally</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-Connect-Your-Local-Hexo-Folder-to-GitHub"><span class="nav-number">4.3.</span> <span class="nav-text">C. Connect Your Local Hexo Folder to GitHub</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#D-Deploy-for-the-First-Time"><span class="nav-number">4.4.</span> <span class="nav-text">D. Deploy for the First Time</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%9C%85-Step-3-5-Hosting-a-Second-Blog-Optional"><span class="nav-number">5.</span> <span class="nav-text">✅ Step 3.5: Hosting a Second Blog (Optional)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%9C%85-Step-4-Connect-a-Custom-Domain-Optional"><span class="nav-number">6.</span> <span class="nav-text">✅ Step 4: Connect a Custom Domain (Optional)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-Buy-a-Domain"><span class="nav-number">6.1.</span> <span class="nav-text">A. Buy a Domain</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-Set-Domain-in-GitHub-Repo-Settings"><span class="nav-number">6.2.</span> <span class="nav-text">B. Set Domain in GitHub Repo Settings</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-Set-DNS-Records"><span class="nav-number">6.3.</span> <span class="nav-text">C. Set DNS Records</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#D-Add-CNAME-to-Your-Hexo-Blog"><span class="nav-number">6.4.</span> <span class="nav-text">D. Add CNAME to Your Hexo Blog</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%9C%85-Step-5-Adding-Editing-and-Deleting-Posts"><span class="nav-number">7.</span> <span class="nav-text">✅ Step 5: Adding, Editing, and Deleting Posts</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-Add-a-New-Post"><span class="nav-number">7.1.</span> <span class="nav-text">A. Add a New Post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-Edit-a-Post"><span class="nav-number">7.2.</span> <span class="nav-text">B. Edit a Post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-Delete-a-Post"><span class="nav-number">7.3.</span> <span class="nav-text">C. Delete a Post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#D-Preview-Changes-Locally"><span class="nav-number">7.4.</span> <span class="nav-text">D. Preview Changes Locally</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#E-Deploy-Changes"><span class="nav-number">7.5.</span> <span class="nav-text">E. Deploy Changes</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%9C%85-Step-6-Change-Blog-Theme"><span class="nav-number">8.</span> <span class="nav-text">✅ Step 6: Change Blog Theme</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-Install-a-Theme-Example-NexT"><span class="nav-number">8.1.</span> <span class="nav-text">A. Install a Theme (Example: NexT)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-Set-Theme-in-config-yml"><span class="nav-number">8.2.</span> <span class="nav-text">B. Set Theme in _config.yml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-Rebuild-and-Deploy"><span class="nav-number">8.3.</span> <span class="nav-text">C. Rebuild and Deploy</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%9C%85-Step-7-Add-Comment-System-Valine-Waline"><span class="nav-number">9.</span> <span class="nav-text">✅ Step 7: Add Comment System (Valine &#x2F; Waline)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-Choose-a-Comment-System"><span class="nav-number">9.1.</span> <span class="nav-text">A. Choose a Comment System</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-Edit-Theme-Config"><span class="nav-number">9.2.</span> <span class="nav-text">B. Edit Theme Config</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-Rebuild-and-Deploy-1"><span class="nav-number">9.3.</span> <span class="nav-text">C. Rebuild and Deploy</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%9C%85-Done"><span class="nav-number">10.</span> <span class="nav-text">✅ Done!</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%93%A4-Blog-Deployment-Overview"><span class="nav-number">11.</span> <span class="nav-text">📤 Blog Deployment Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%9A%A8-Common-Errors-Solutions"><span class="nav-number">12.</span> <span class="nav-text">🚨 Common Errors &amp; Solutions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%9A%80Advanced-Feature-WIP"><span class="nav-number">13.</span> <span class="nav-text">🚀Advanced Feature (WIP)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Auto-Deployment-with-GitHub-Actions"><span class="nav-number">13.1.</span> <span class="nav-text">Auto Deployment with GitHub Actions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Local-Mobile-Writing-Workflow"><span class="nav-number">13.2.</span> <span class="nav-text">Local + Mobile Writing Workflow</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#A-On-Your-Computer"><span class="nav-number">13.2.0.1.</span> <span class="nav-text">A. On Your Computer</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#B-On-Mobile"><span class="nav-number">13.2.0.2.</span> <span class="nav-text">B. On Mobile</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#One-click-Init-Deploy-Script-Bash"><span class="nav-number">13.2.1.</span> <span class="nav-text">One-click Init + Deploy Script (Bash)</span></a></li></ol></li></ol></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">John Doe</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">4</span>
-          <span class="site-state-item-name">posts</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">tags</span>
-      </div>
-  </nav>
-</div>
-
-
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2025</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
-</div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
-  </div>
-
-        
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
 
   
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
 
-<script src="/js/utils.js"></script>
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
 
-<script src="/js/motion.js"></script>
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
 
 
-<script src="/js/schemes/muse.js"></script>
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
 
 
-<script src="/js/next-boot.js"></script>
 
 
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
 
 
   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>
